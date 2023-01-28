@@ -1,5 +1,5 @@
 import tkinter as tk
-import tkinter.messagebox
+from tkinter.messagebox import*
 import time
 class Application(tk.Frame): 
     def __init__(self, master, *args, **kwargs):
