@@ -49,7 +49,7 @@ class Application(tk.Frame):
     def timer(self):
         if self.running:
             if self.time <= 0:
-                self.clock.configure(text="Time's up!")
+                self.clock.configure(text="TIME OVER!")
             else:
                 self.clock.configure(text=self.calculate())
                 self.time -= 1
@@ -75,7 +75,7 @@ class Application(tk.Frame):
         self.time = 0
         self.clock["text"] = "00:00:00"
     def quit(self):
-        if tk.messagebox.askokcancel("Quit", "Do you want to quit?"):
+        if tk.messagebox.askokcancel("Exit", "want to exit?"):
             root.destroy()
     def pause(self):
         self.pause_button.configure(text="Resume", command=lambda: self.resume())
