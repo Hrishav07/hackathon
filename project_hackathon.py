@@ -2,9 +2,9 @@ from tkinter import*
 from tkinter.messagebox import*
 import time
 root=Tk()
-class Application(tk.Frame): 
+class Application(root.Frame): 
     def __init__(self, master, *args, **kwargs):
-        tk.Frame.__init__(self, master, *args, **kwargs)
+        root.Frame.__init__(self, master, *args, **kwargs)
         self.master = master
         self.running = False
         self.time = 0
@@ -13,25 +13,25 @@ class Application(tk.Frame):
         self.secs = 0
         self.build_interface()
     def build_interface(self):
-        self.time_entry = tk.Entry(self)
+        self.time_entry = root.Entry(self)
         self.time_entry.grid(row=0, column=1)
 
-        self.clock = tk.Label(self, text="00:00:00", font=("Courier", 20), width=10)
+        self.clock = root.Label(self, text="00:00:00", font=("Courier", 20), width=10)
         self.clock.grid(row=1, column=1, stick="S")
 
-        self.time_label = tk.Label(self, text="hour   min   sec", font=("Courier", 10), width=15)
+        self.time_label = root.Label(self, text="hour   min   sec", font=("Courier", 10), width=15)
         self.time_label.grid(row=2, column=1, sticky="N")
 
-        self.power_button = tk.Button(self, text="Start", command=lambda: self.start())
+        self.power_button = root.Button(self, text="Start", command=lambda: self.start())
         self.power_button.grid(row=3, column=0, sticky="NE")
 
-        self.reset_button = tk.Button(self, text="Reset", command=lambda: self.reset())
+        self.reset_button = root.Button(self, text="Reset", command=lambda: self.reset())
         self.reset_button.grid(row=3, column=1, sticky="NW")
 
-        self.quit_button = tk.Button(self, text="Quit", command=lambda: self.quit())
+        self.quit_button = root.Button(self, text="Quit", command=lambda: self.quit())
         self.quit_button.grid(row=3, column=3, sticky="NE")
 
-        self.pause_button = tk.Button(self, text="Pause", command=lambda: self.pause())
+        self.pause_button = root.Button(self, text="Pause", command=lambda: self.pause())
         self.pause_button.grid(row = 3,column=2, sticky = "NW")
 
         self.master.bind("<Return>", lambda x: self.start())
