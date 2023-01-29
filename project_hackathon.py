@@ -1,6 +1,7 @@
-import tkinter as tk
+from tkinter import*
 from tkinter.messagebox import*
 import time
+root=Tk()
 class Application(tk.Frame): 
     def __init__(self, master, *args, **kwargs):
         tk.Frame.__init__(self, master, *args, **kwargs)
